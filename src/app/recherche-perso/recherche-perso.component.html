@@ -1,0 +1,28 @@
+<div class="background">
+  <img src="/assets/Star_Wars_Logo.png" class="img-responsive center-block"/>
+
+  <div class="center-block">
+    <input type="text" [(ngModel)]="recherche"/>
+    <button (click)="rechercher()">Rechercher</button>
+  </div>
+
+  <ul class="list-inline">
+    <div class="col-sm-12">
+      <li *ngFor="let item of resultats">
+        <div class="col-sm-3" style="border: 20pt">
+          <h2>{{item.name}}</h2>
+          <p>Gender : {{item.gender}}</p>
+          <p>Birth year : {{item.birth_year}}</p>
+          <a [routerLink]="['/personnage', item.url]">Voir les détails</a>
+        </div>
+      </li>
+      </div>
+  </ul>
+
+  <div> 
+    <p *ngIf="resultats.length === 0">Aucun personnage n'a été trouvé</p>
+    <div *ngIf="resultats.length !== 0"> 
+      <pagination [page]="pageCourante" [total]="pages" (pageChanged)="changerPage($event)"></pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+
+  <div class="detail">
+
+    <div class="container">
+    <div class="col-sm-4"> 
+      <h1>{{personnage.name}}</h1>
+      <p> Height : {{personnage.height}}</p>
+      <p> Hair color : {{personnage.hair_color}}</p>
+      <p> Skin color : {{personnage.skin_color}}</p>
+      <p> Eye color : {{personnage.eye_color}}</p>
+      <p> Birth year : {{personnage.birth_year}}</p>
+      <p> Gender : {{personnage.gender}}</p>
+      <p> Homeworld : {{planete.name}}</p>
+      <p> Species : {{espece.name}}</p>
+    </div>
+
+    <div class="col-sm-4">
+      <br>
+      <br>
+      <p>Films : </p> 
+      <ul>
+        <li *ngFor="let item of films">
+          <p>{{item.title}}</p>
+          <button (click)="afficherInfoFilm(item)">En savoir +</button>
+        </li>
+      </ul>
+    </div>
+    
+  <div class="col-sm-4">
+    <br>
+    <br>
+    <p>Vehicles : </p> 
+    <ul>
+      <li *ngFor="let item of vehicules">
+        <p>{{item.name}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-sm-4"> 
+    <br>
+      <br>
+    <p>Starships : </p> 
+    <ul>
+      <li *ngFor="let item of vaisseaux">
+        <p>{{item.name}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-sm-12"> 
+      <button routerLink="/accueil">Retour</button>
+  </div>
+
+  </div>
+</div>
